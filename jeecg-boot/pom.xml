@@ -15,8 +15,9 @@
 
 	<modules>
 		<module>jeecg-boot-base-common</module>
+		<module>jeecg-boot-module-wechat</module>
 		<module>jeecg-boot-module-system</module>
-	</modules> 
+	</modules>
 	
 	<repositories>
 		<!--<repository>
@@ -39,6 +40,7 @@
 	
     <properties>
         <jeecgboot.common.version>2.0.2</jeecgboot.common.version>
+        <jeecgboot.wechat.version>2.0.2</jeecgboot.wechat.version>
         <java.version>1.8</java.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -255,6 +257,12 @@
 	    		<artifactId>jeecg-boot-base-common</artifactId>
 	    		<version>${jeecgboot.common.version}</version>
 	    	</dependency>
+			<!-- jeecg-boot-module-wechat -->
+			<dependency>
+				<groupId>org.jeecgframework.boot</groupId>
+				<artifactId>jeecg-boot-module-wechat</artifactId>
+				<version>${jeecgboot.wechat.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<build>
