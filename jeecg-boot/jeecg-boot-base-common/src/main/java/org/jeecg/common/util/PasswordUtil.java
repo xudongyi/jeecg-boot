@@ -121,7 +121,7 @@ public class PasswordUtil {
 		}
 
 		catch (Exception e) {
-			// TODO: handle exception
+			// TODO: handler exception
 		}
 		return new String(passDec);
 	}
