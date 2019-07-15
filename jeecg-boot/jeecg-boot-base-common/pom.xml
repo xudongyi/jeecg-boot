@@ -12,14 +12,14 @@
 	</parent>
 	
 	<repositories>
-		<repository>
-			<id>aliyun</id>
-			<name>aliyun Repository</name>
-			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+		<!--<repository>
+			<id>nexus-pentaho</id>
+			<name>>Nexus pentaho</name>
+			<url>https://nexus.pentaho.org/content/repositories/omni</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-		</repository>
+		</repository>-->
 		<repository>
 			<id>jeecg</id>
 			<name>jeecg Repository</name>
