@@ -135,3 +135,10 @@ jeecg :
 logging:
   level:
     org.jeecg.modules.system.mapper : debug
+wx:
+  mp:
+    configs:
+      - appId: wx5dc785b928e23296
+        secret: 0c361ff02e7dc262e4bb3fcd76240e54
+        token: kgComc8W47EUFryu
+        aesKey:
