@@ -1,8 +1,13 @@
 package org.jeecg.wechat.handler;
 
+import java.util.Date;
 import java.util.Map;
 
+import lombok.extern.slf4j.Slf4j;
+import org.jeecg.modules.wxuser.entity.WxUser;
+import org.jeecg.modules.wxuser.service.IWxUserService;
 import org.jeecg.wechat.builder.TextBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import me.chanjar.weixin.common.error.WxErrorException;
@@ -16,7 +21,10 @@ import me.chanjar.weixin.mp.bean.result.WxMpUser;
  * @author Binary Wang(https://github.com/binarywang)
  */
 @Component
+@Slf4j
 public class SubscribeHandler extends AbstractHandler {
+    @Autowired
+    private IWxUserService wxUserService;
 
     @Override
     public WxMpXmlOutMessage handle(WxMpXmlMessage wxMessage,
@@ -31,6 +39,31 @@ public class SubscribeHandler extends AbstractHandler {
                 .userInfo(wxMessage.getFromUser(), null);
             if (userWxInfo != null) {
                 // TODO 可以添加关注用户到本地数据库
+                //1.增加一张表记录已关注的用户信息
+                try {
+                    WxUser wxUser = new WxUser();
+                    wxUser.setCity(userWxInfo.getCity());
+                    wxUser.setCountry(userWxInfo.getCountry());
+                    wxUser.setCreateBy("system");
+                    wxUser.setCreateTime(new Date());
+                    wxUser.setGroupid(userWxInfo.getGroupId());
+                    wxUser.setHeadImgUrl(userWxInfo.getHeadImgUrl());
+                    wxUser.setLanguage(userWxInfo.getLanguage());
+                    wxUser.setNickname(userWxInfo.getNickname());
+                    wxUser.setOpenId(userWxInfo.getOpenId());
+                    wxUser.setProvince(userWxInfo.getProvince());
+                    wxUser.setRemark(userWxInfo.getRemark());
+                    wxUser.setQrscene(userWxInfo.getQrScene());
+                    wxUser.setQrscenestr(userWxInfo.getQrSceneStr());
+                    wxUser.setUnionid(userWxInfo.getUnionId());
+                    wxUser.setSex(userWxInfo.getSex());
+                    wxUser.setSubscribeTime(new Date());
+                    wxUser.setSubscribescene(userWxInfo.getSubscribeScene());
+                    wxUserService.save(wxUser);
+                } catch (Exception e) {
+                    log.error(e.getMessage(),e);
+                }
+
             }
         } catch (WxErrorException e) {
             if (e.getError().getErrorCode() == 48001) {
