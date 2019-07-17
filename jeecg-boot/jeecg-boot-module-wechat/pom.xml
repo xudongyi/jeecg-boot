@@ -16,6 +16,10 @@
             <artifactId>weixin-java-mp</artifactId>
             <version>3.4.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.jeecgframework.boot</groupId>
+            <artifactId>jeecg-boot-base-common</artifactId>
+        </dependency>
     </dependencies>
 	<repositories>
 		<!--<repository>
