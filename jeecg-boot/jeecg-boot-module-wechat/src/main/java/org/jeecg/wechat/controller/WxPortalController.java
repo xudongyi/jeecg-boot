@@ -28,14 +28,14 @@ import java.util.Date;
 @Slf4j
 @AllArgsConstructor
 @RestController
-@RequestMapping("/wx/portal/{appid}")
+@RequestMapping("/wx/portal")
 public class WxPortalController extends GenericController{
     private final WxMpService wxService;
     private final WxMpMessageRouter messageRouter;
     @Autowired
     private IWxUserService wxUserService;
     @GetMapping(produces = "text/plain;charset=utf-8")
-    public String authGet(@PathVariable String appid,
+    public String authGet(@RequestParam String appid,
                           @RequestParam(name = "signature", required = false) String signature,
                           @RequestParam(name = "timestamp", required = false) String timestamp,
                           @RequestParam(name = "nonce", required = false) String nonce,
@@ -59,7 +59,7 @@ public class WxPortalController extends GenericController{
     }
 
     @PostMapping(produces = "application/xml; charset=UTF-8")
-    public String post(@PathVariable String appid,
+    public String post(@RequestParam String appid,
                        @RequestBody String requestBody,
                        @RequestParam("signature") String signature,
                        @RequestParam("timestamp") String timestamp,

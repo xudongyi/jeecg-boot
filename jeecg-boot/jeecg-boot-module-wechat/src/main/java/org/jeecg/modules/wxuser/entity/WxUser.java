@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.jeecg.common.system.base.entity.JeecgEntity;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.jeecgframework.poi.excel.annotation.Excel;
 
@@ -24,7 +25,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @ApiModel(value="wx_user对象", description="微信用户")
-public class WxUser {
+public class WxUser extends JeecgEntity {
     
 	/**主键id*/
 	@TableId(type = IdType.UUID)
@@ -92,24 +93,4 @@ public class WxUser {
 	@Excel(name = "qrscenestr", width = 15)
     @ApiModelProperty(value = "qrscenestr")
 	private String qrscenestr;
-	/**创建人*/
-	@Excel(name = "创建人", width = 15)
-    @ApiModelProperty(value = "创建人")
-	private String createBy;
-	/**创建时间*/
-	@Excel(name = "创建时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
-	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    @ApiModelProperty(value = "创建时间")
-	private Date createTime;
-	/**更新人*/
-	@Excel(name = "更新人", width = 15)
-    @ApiModelProperty(value = "更新人")
-	private String updateBy;
-	/**更新时间*/
-	@Excel(name = "更新时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
-	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
-    @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    @ApiModelProperty(value = "更新时间")
-	private Date updateTime;
 }
