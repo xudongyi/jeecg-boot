@@ -21,7 +21,7 @@ export function getOAuth2UserInfo(params) {
 }
 export function createJsapiSignature(params) {
   return http({
-    url: '/wechat/createJsapiSignature.do',
+    url: '/wx/portal/createJsapiSignature.do',
     method: 'get',
     params: params
   })
@@ -32,7 +32,7 @@ export function createJsapiSignature(params) {
  */
 export function unifiedOrder(params) {
   return http({
-    url: '/wechat/unifiedOrder.do',
+    url: '/wx/portal/unifiedOrder.do',
     method: 'post',
     params
   })
@@ -44,7 +44,7 @@ export function unifiedOrder(params) {
  */
 export function applyPay(params) {
   return http({
-    url: '/wechat/applyPay.do',
+    url: '/wx/portal/applyPay.do',
     method: 'post',
     params
   })

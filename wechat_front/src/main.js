@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Vant from 'vant';
-import 'vant/lib/vant-css/index.css';
+import 'vant/lib/index.css';
 import store from "./store/"
 import App from './App'
 import 'sweetalert2/dist/sweetalert2.min.css'

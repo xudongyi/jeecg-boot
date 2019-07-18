@@ -14,6 +14,13 @@ export default new Router({
     }, hidden: true
     },
     {
+      path: '/bindUser',
+      meta: {
+        title: "绑定用户",
+      },
+      component: _import('bindUser/bindUser')
+    },
+    {
       path: '/payTest',
       meta: {
         title: "测试微信支付",
