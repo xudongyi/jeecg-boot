@@ -20,7 +20,7 @@
     "querystring": "^0.2.0",
     "sweetalert": "^2.1.0",
     "sweetalert2": "^7.18.0",
-    "vant": "^1.0.4",
+    "vant": "^2.1.8",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vue-wechat-title": "^2.0.4",
