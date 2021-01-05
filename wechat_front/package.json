@@ -10,7 +10,7 @@
     "build": "nodemon --watch src -e html,vue,js,less css build/build.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "externalip": "^1.0.2",
     "iview": "^2.11.0",
     "moment": "^2.22.0",
